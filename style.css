@@ -294,3 +294,216 @@ footer {
     gap: 0.8rem;
   }
 }
+
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--blue);
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  z-index: 999;
+  transition: top 0.15s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+/* ── NAV LINKS ── */
+nav {
+  gap: 1.5rem;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-link {
+  color: #BFD0F0;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 400;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: all 0.15s;
+  letter-spacing: 0.02em;
+}
+.nav-link:hover {
+  color: #FFFFFF;
+  background: rgba(255,255,255,0.1);
+}
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.1);
+}
+/* HIGH-CONTRAST FOCUS for nav links — visible against navy */
+.nav-link:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+  color: #FFFFFF;
+}
+
+/* ── GLOBAL FOCUS STYLE — blue outline on light backgrounds ── */
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── KEYBOARD DOCS SECTION ── */
+.keyboard-wrap {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.keyboard-text p {
+  font-size: 0.95rem;
+  color: var(--ink2);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.kb-note {
+  font-size: 0.88rem !important;
+  background: var(--blue-light);
+  border-left: 4px solid var(--blue);
+  padding: 0.75rem 1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--ink) !important;
+}
+.kb-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 0.88rem;
+}
+.kb-table th,
+.kb-table td {
+  text-align: left;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border-card);
+  color: var(--ink2);
+}
+.kb-table th {
+  background: var(--bg-nav);
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.kb-table tr:nth-child(even) td {
+  background: var(--bg);
+}
+kbd {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* ── READS PAGE ── */
+.reads-wrap {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.section--full {
+  grid-template-columns: 180px 1fr;
+}
+.hero--short {
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+.reads-hint {
+  font-size: 0.82rem;
+  color: var(--ink2);
+  margin-bottom: 1.25rem;
+  padding: 0.55rem 1rem;
+  background: var(--blue-light);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-card);
+}
+.reads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.read-item {
+  list-style: none;
+}
+.read-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.read-link:hover {
+  border-left-color: var(--teal);
+  box-shadow: 0 2px 10px rgba(13,115,119,0.12);
+  transform: translateX(4px);
+}
+/* HIGH-CONTRAST FOCUS for read links */
+.read-link:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-left-color: var(--blue-hover);
+  background: var(--blue-light);
+}
+/* Arrow key focused item */
+.read-link.kb-focused {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-left-color: var(--blue-hover);
+  background: var(--blue-light);
+}
+.read-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.read-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.read-desc {
+  font-size: 0.8rem;
+  color: var(--ink2);
+  line-height: 1.6;
+}
+
+/* ── SORT BUTTON — explicit focus ── */
+.sort-btn:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ── INTERESTS LIST — focus on items when arrow-key navigating ── */
+.item.kb-focused {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-left-color: var(--blue-hover);
+  background: var(--blue-light);
+}
