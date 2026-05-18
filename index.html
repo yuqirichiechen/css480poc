@@ -11,54 +11,89 @@
 </head>
 <body>
 
+  <!-- SKIP LINK: lets keyboard users jump straight to content, bypassing nav -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- NAV -->
-  <nav>
+  <nav role="navigation" aria-label="Main navigation">
     <span class="nav-logo">Richie Chen</span>
+    <ul class="nav-links" role="menubar">
+      <li role="none"><a href="index.html" class="nav-link active" role="menuitem" aria-current="page">Home</a></li>
+      <li role="none"><a href="reads.html" class="nav-link" role="menuitem">Things to Read</a></li>
+    </ul>
     <span class="nav-tag">CSS 480 · HCI · UW Bothell</span>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero-wrap">
-    <section class="hero">
-      <div>
-        <p class="eyebrow">Welcome</p>
-        <h1>Hey, I'm <em>Richie</em> —<br />nice to have you here.</h1>
-        <p class="hero-desc">This is my CSS 480 landing page. Pull up a chair, take a look around, and feel free to reach out.</p>
-      </div>
-      <div class="avatar">🧑‍💻</div>
-    </section>
-  </div>
+  <main id="main-content">
 
-  <!-- ABOUT -->
-  <div class="about-wrap">
-    <section class="section">
-      <p class="section-label">About Me</p>
-      <div class="about-text">
-        <p>I'm <strong>Richie Chen</strong>, a junior studying <strong>Computer Science &amp; Software Engineering</strong> at <strong>UW Bothell</strong>, expected to graduate in 2026. I'm interested in how technology shapes the way people interact with the world around them, which is what drew me to HCI.</p>
-        <p>Outside of class I enjoy working on personal projects, volunteering at campus tech events, and exploring the Seattle area. I'm currently taking CSS 480 to deepen my understanding of user-centered design and interaction principles.</p>
-        <p>When I'm not studying I'm probably at the gym, trying a new restaurant, or down a YouTube rabbit hole about something I definitely didn't need to know.</p>
-      </div>
-    </section>
-  </div>
-
-  <!-- INTERESTS -->
-  <div class="interests-wrap">
-    <section class="section">
-      <p class="section-label">Things I'm Into</p>
-      <div class="interests-content">
-        <div class="interests-header">
-          <span class="sort-info" id="sort-info">Default order · 6 items</span>
-          <button class="sort-btn" id="sort-btn">
-            <span class="arrow" id="arrow">↑↓</span>
-            <span id="btn-label">Sort A–Z</span>
-          </button>
+    <!-- HERO -->
+    <div class="hero-wrap">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Welcome</p>
+          <h1>Hey, I'm <em>Richie</em> —<br />nice to have you here.</h1>
+          <p class="hero-desc">This is my CSS 480 landing page. Pull up a chair, take a look around, and feel free to reach out.</p>
         </div>
-        <ul id="interests-list">
-          <!-- Populated by app.js -->
-        </ul>
-      </div>
-    </section>
-  </div>
+        <div class="avatar" aria-hidden="true">🧑‍💻</div>
+      </section>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="about-wrap">
+      <section class="section">
+        <p class="section-label">About Me</p>
+        <div class="about-text">
+          <p>I'm <strong>Richie Chen</strong>, a junior studying <strong>Computer Science &amp; Software Engineering</strong> at <strong>UW Bothell</strong>, expected to graduate in 2026. I'm interested in how technology shapes the way people interact with the world around them, which is what drew me to HCI.</p>
+          <p>Outside of class I enjoy working on personal projects, volunteering at campus tech events, and exploring the Seattle area. I'm currently taking CSS 480 to deepen my understanding of user-centered design and interaction principles.</p>
+          <p>When I'm not studying I'm probably at the gym, trying a new restaurant, or down a YouTube rabbit hole about something I definitely didn't need to know.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- INTERESTS -->
+    <div class="interests-wrap">
+      <section class="section">
+        <p class="section-label">Things I'm Into</p>
+        <div class="interests-content">
+          <div class="interests-header">
+            <span class="sort-info" id="sort-info" aria-live="polite">Default order · 6 items</span>
+            <button class="sort-btn" id="sort-btn" aria-label="Sort interests list alphabetically">
+              <span class="arrow" id="arrow" aria-hidden="true">↑↓</span>
+              <span id="btn-label">Sort A–Z</span>
+            </button>
+          </div>
+          <ul id="interests-list" aria-label="List of interests" role="list">
+            <!-- Populated by app.js -->
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- KEYBOARD DOCS -->
+    <div class="keyboard-wrap">
+      <section class="section">
+        <p class="section-label">Keyboard Access</p>
+        <div class="keyboard-text">
+          <p>This site is fully navigable by keyboard. Here is how to get around:</p>
+          <table class="kb-table" aria-label="Keyboard shortcuts">
+            <thead>
+              <tr><th scope="col">Key</th><th scope="col">Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><kbd>Tab</kbd></td><td>Move forward through all links, buttons, and interactive elements</td></tr>
+              <tr><td><kbd>Shift + Tab</kbd></td><td>Move backward through interactive elements</td></tr>
+              <tr><td><kbd>Enter</kbd> or <kbd>Space</kbd></td><td>Activate the focused button or link</td></tr>
+              <tr><td><kbd>↑</kbd> / <kbd>↓</kbd> Arrow keys</td><td>Move between items in the interests list when it is focused</td></tr>
+              <tr><td><kbd>Home</kbd> / <kbd>End</kbd></td><td>Jump to the first or last item in the interests list</td></tr>
+              <tr><td><kbd>Enter</kbd> on a nav link</td><td>Navigate to Home or Things to Read page</td></tr>
+            </tbody>
+          </table>
+          <p class="kb-note">The most important usability principle applied here is <strong>focus visibility</strong> — every interactive element shows a clear, high-contrast blue outline when focused, so keyboard users always know exactly where they are on the page. A "Skip to main content" link is also the very first focusable element, letting users jump past the navigation bar without tabbing through every link.</p>
+        </div>
+      </section>
+    </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
